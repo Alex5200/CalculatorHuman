@@ -109,6 +109,7 @@ export default function Login() {
                     "pass": pass
                 }
             )
+            window.open("/")
         }
 
     }

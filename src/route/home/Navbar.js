@@ -35,14 +35,15 @@ export default function Navbar() {
                     </Linked>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" className="text-xl font-Ubuntu leading-6 text-gray-900">
+                    <Linked to="/Profile" href="#" className="text-xl font-Ubuntu leading-6 text-gray-900">
                         {"Hi! " + Name}
-                    </a>
+                    </Linked>
                 </div>
                 </>
             )
         }
         else {
+            return(
             <>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
                     <Linked to="/" className="text-xl font-Ubuntu leading-6 text-gray-900">
@@ -60,7 +61,7 @@ export default function Navbar() {
                         Войти <span aria-hidden="true">&rarr;</span>
                     </Linked>
                 </div>
-        </>
+        </>)
         }
     }
     function ChekRegisterShortWindow(){
@@ -92,6 +93,7 @@ export default function Navbar() {
 
         }
         else {
+            return (
             <>
                 <div className="space-y-2 py-6">
                     <Linked
@@ -121,7 +123,7 @@ export default function Navbar() {
                         Войти
                     </a>
                 </div>
-            </>
+            </>)
         }
     }
     return (

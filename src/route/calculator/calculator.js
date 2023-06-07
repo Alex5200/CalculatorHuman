@@ -8,19 +8,22 @@ export default function Calculator(){
     const [v, setV] = useState(0)
     const [result, setResult] = useState(0)
     const [resultCategory, setresultCategory] = useState(0)
+    const [id, setId] = useState(0);
 
     const indexHuman = ""
     let email = Cookies.get("Email")
     function SendDataIndex(){
         if (result != 0){
-        email =  email.replaceAll('.', '_')
-        email =  email.replaceAll('@', '-')
-        db.ref("email_"+email).update({
-            "HumanIndex": {
-                "index": result,
-                "category": resultCategory,
-            }}
-        )}
+            var today = new Date()
+            setId(today.getDate())
+            email =  email.replaceAll('.', '_')
+            email =  email.replaceAll('@', '-')
+            var send = {
+                    "index": result,
+                    "category": resultCategory,
+            }
+
+        db.ref("email_"+email+"/HumanIndex_" + id).update(send)}
     }
 
     const HandleClickW = (e) => {
@@ -67,7 +70,6 @@ export default function Calculator(){
                             Сохранить
                         </button>
                     </div>
-
                 </div>
             )
         }
