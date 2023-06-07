@@ -1,4 +1,6 @@
 import "../../index.css"
+import { BrowserRouter, Link as Linked, Routes, Route } from "react-router-dom";
+
 export default function Calculator (){
     return(
         <div className="" >
